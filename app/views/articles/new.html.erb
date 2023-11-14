@@ -1,0 +1,12 @@
+<div class="container">
+  <%= form_with model: @article do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+    <%= f.submit %>
+  <% end %>
+</div>
+<div class="d-flex justify-content-center">
+<%= link_to 'Back to menu', articles_path, class: 'btn btn-primary mt-1' %>
+</div>

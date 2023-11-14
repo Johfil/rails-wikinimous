@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>My articles</h1>
+  <div>
+    <ul class="list-group" >
+        <li class="list-group-item">
+          <label for="article"><%= @article.title %></label>
+          <p><%= @article.content %></p>
+        </li>
+    </ul>
+    <%= link_to  "Back to list", articles_path%>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+<div class="d-flex text-align-center">
+  <h1>My articles</h1>
+  </div>
+    <%= link_to "Add new article", new_article_path, class: "btn btn-success" %>
+  <div>
+    <ul class="list-group">
+      <% @articles.each do |article| %>
+        <li class="list-group-item">
+          <label for="article"><%= link_to article.title, article_path(article) %></label>
+          <p><%= link_to article.content, article_path(article) %></p>
+          <%= link_to 'Edit', edit_article_path(article), class: "btn btn-primary" %>
+          <%= link_to "Delete", article_path(article),
+              method: :delete,
+              remote: true,
+              data: { turbo_confirm: "Are you sure?", turbo_method: :delete },
+              class: "btn btn-secondary" %>
+        </li>
+      <% end %>
+    </ul>
+
+  </div>
+</div>
